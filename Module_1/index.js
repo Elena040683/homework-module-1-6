@@ -166,3 +166,182 @@ if (totalSpent >= 50000) {
   // Change code above this line
   return discount;
 }
+
+
+
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+  message = ordered > available ? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
+  
+
+  // Change code above this line
+  return message;
+}
+
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+  message = password === ADMIN_PASSWORD ? "Access is allowed" : "Access denied, wrong password!";
+  // Change code above this line
+  return message;
+}
+
+
+function getSubscriptionPrice(type) {
+  let price;
+  // Change code below this line
+
+ switch (type) { // Change this line
+    case "starter": // Change this line
+      price = 0; // Change this line
+      break;
+
+    case "professional": // Change this line
+      price = 20; // Change this line
+      break;
+
+   case "organization" :// Change this line
+      price = 50; // Change this line
+      break;
+  }
+
+  // Change code above this line
+  return price;
+}
+
+// Функция checkPassword(password) получает пароль в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+// 
+// Если значение параметра password:
+// 
+// равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+// совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+// не удобвлетворяет ни одному из предыдущих условий, в переменную message записывается строка "Access denied, wrong password!".
+// Проведи рефакторинг кода, заменив инструкцию if..else на switch, и не забудь о блоке default (аналог else).
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+	switch (password) {
+      case null :
+        message = "Canceled by user!";
+        break;
+        
+      case ADMIN_PASSWORD :
+        message = "Welcome!";
+        break;
+        
+      default:
+         message = "Access denied, wrong password!";
+    }
+  
+  // Change code above this line
+  return message;
+}
+
+
+function getShippingCost(country) {
+  let message;
+  // Change code below this line
+	switch (country) {
+      case "China" :
+        message = "Shipping to China will cost 100 credits";
+        break;
+        
+      case "Chile" :
+        message = "Shipping to Chile will cost 250 credits";
+        break;
+        
+      case "Australia" :
+        message = "Shipping to Australia will cost 170 credits";
+        break;
+        
+        case "Jamaica" :
+        message = "Shipping to Jamaica will cost 120 credits";
+        break;
+        
+      default:
+        message = "Sorry, there is no delivery to your country";
+        
+    }
+  // Change code above this line
+  return message;
+}
+
+
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим элементам или свойствам строки в переменной course.
+
+// courseTopicLength - длина строки.
+// firstElement - первый символ строки.
+// lastElement - последний символ строки.
+
+const courseTopic = "JavaScript essentials";
+// Change code below this line
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopic.length - 1];
+
+// Change code above this line
+
+
+// Функция getSubstring(string, length) принимает строку и возвращает подстроку от начала и до length символов. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+// string - оригинальная строка
+// length - количество символов с начала строки для подстроки
+// Присвой переменной substring выражение создания подстроки длинной length символов (от начала) из строки string.
+
+function getSubstring(string, length) {
+  const substring = string.slice(0, length); // Change this line
+
+  return substring;
+}
+
+// Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+// 
+// Дополни код функции так, что если длина строки:
+// 
+// не превышает maxLength, функция возвращает её в исходном виде.
+// больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
+
+1. Определить длину message
+2. Сравнить длину с maxLength
+3.
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+	if (message.length > maxLength) {
+      result = message.slice(0, maxLength) + "...";
+    } else {
+      result = message;
+    }
+  /// Change code above this line
+  return result;
+}
+
+function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Change this line
+
+  return normalizedInput;
+}
+
+function checkForName(fullName, name) {
+  const result = fullName.includes(name); // Change this line
+   return result;
+ }
+ 
+//  Функция checkForSpam(message) принимает строку (параметр message), проверяет её на содержание запрещенных слов spam и sale, и возвращает результат проверки. Слова в строке параметра message могут быть в произвольном регистре, например SPAM или sAlE.
+
+//  Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
+//  Если в строке нет запрещенных слов, функция возвращает буль false.
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+	result = message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale") ? true : false;
+  // Change code above this line
+  return result;
+}
