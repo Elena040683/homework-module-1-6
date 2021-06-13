@@ -390,7 +390,7 @@ for (let i = start; i <= end; i+=1) {
 
 function includes(array, value) {
   // Change code below this line
-  for(let i of array) {  
+  for(let element of array) {  
   
  	return array.indexOf(value) !== -1 ? true : false;
     
